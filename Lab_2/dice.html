@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DICE</title>
+    </head>
+    <style>
+        html{
+            background: linear-gradient(#FF3366,#eb2f64);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        h1,
+        .btn{
+            text-align: center;
+        }
+        .result{
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+        span{
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid blue;
+        }
+        p{
+            color: #fff;
+            font-size: 22px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <h1>DICE</h1>
+        <div class="btn">
+        <button>ROLL DICE</button>
+        </div>
+        <div class="result"><span></span></div>
+        <p></p>
+
+        <script>
+            document.querySelector('button').addEventListener('click',function() {
+                var dice = Math.floor(Math.random() * 6) + 1;
+                document.querySelector('span').textContent=dice;
+                if(dice===6)
+                    document.querySelector('p').textContent='Hurry !!! You Got 6';
+                else
+                    document.querySelector('p').textContent='';
+
+            })
+        </script>
+    </body>
+</html>
