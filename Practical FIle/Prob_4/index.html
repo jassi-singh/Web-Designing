@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Rolling of Dice</title>
+    <style>
+        body{
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section{
+            display: flex;
+            width: 100%;
+        }
+        section > div {
+            text-align: center;
+            width: 50%;
+        }
+        span {
+            color: red;
+        }
+        .span{
+            color: blue;
+        }
+    </style>
+</head>
+<body class="container">
+    <h1>LET Roll the Dice</h1>
+    <section>
+        <div id="dice1">1st Time DICE Rolls to 2</div>
+        <div id="dice2">2st Time DICE Rolls to 5</div>
+    </section>
+    
+    <script>
+        var doc1 = document.getElementById('dice1');
+        var doc2 = document.getElementById('dice2');
+        var str1 = '';
+        var str2 = '';
+
+        for(var i=1;i<31;i++)
+        {
+            var num = Math.floor(Math.random()*6) + 1;
+            if(i%2)
+                str1 += "<span class='span'>"+i+"th</span> Time Dice Rolls to <span>"+num+"</span><br>";
+            else
+                str2 += "<span class='span'>"+i+"th</span> Time Dice Rolls to <span>"+num+"</span><br>";
+        }
+        doc1.innerHTML = str1;
+        doc2.innerHTML = str2;
+    </script>
+</body>
+</html>

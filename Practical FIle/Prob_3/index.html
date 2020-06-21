@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Squre of 1-50 numbers</title>
+
+    <!-- ############################################# -->
+    <!-- ------------ CSS CODE ----------------------- -->
+    <!-- ############################################# -->
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+        section {
+            display: flex;
+        }
+        div {
+            width: 50%;
+        }
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1>There are Squre of numbers from 1 to 50</h1>
+    <section>
+        <div id="square1">Jaswinder</div>
+        <div id="square2">jassi</div>
+    </section>
+
+    <!-- ############################################# -->
+    <!-- ------------ JS CODE ----------------------- -->
+    <!-- ############################################# -->
+
+    <script>
+        var n = 51;
+        var doc1 = document.getElementById('square1');
+        var doc2 = document.getElementById('square2');
+        var str1 = "";
+        var str2 = "";
+        for (var i = 1; i < n; i++) {
+            var sq = i * i;
+            if (i % 2)
+                str1 += "Square of <span>" + i + "</span> is <span>" + sq + "</span> <br>";
+            else
+                str2 += "Square of <span>" + i + "</span> is <span>" + sq + "</span> <br>";
+        }
+        doc1.innerHTML = str1;
+        doc2.innerHTML = str2;
+    </script>
+</body>
+
+</html>

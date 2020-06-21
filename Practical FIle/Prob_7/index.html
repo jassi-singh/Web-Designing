@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Adding 2 numbers using PROMPT</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        section {
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            width: 100%;
+        }
+
+        div {
+            width: 12%;
+            justify-self: center;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1>Adding Two Numbers Using Javascript PROMPT</h1>
+    <section>
+        <div id="one">7</div>
+        <div>+</div>
+        <div id="two">7</div>
+        <div>=</div>
+        <div id="three">14</div>
+    </section>
+
+    <script>
+        function addNum(firstNo, secondNo) {
+            var val = 0;
+
+            function add() {
+                return val + (firstNo + secondNo);
+            }
+            return add();
+        }
+        var num1 = prompt("ENTER 1st Number");
+        var num2 = prompt("ENTER 2nd Number");
+
+        var val = addNum(Number(num1),Number(num2));
+        document.getElementById('one').textContent=num1;
+        document.getElementById('two').textContent=num2;
+        document.getElementById('three').textContent=val;
+    </script>
+</body>
+
+</html>

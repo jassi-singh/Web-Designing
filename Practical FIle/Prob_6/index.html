@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Regular Expression</title>
+
+    <style>
+        h3{text-align: center;padding-bottom: 60px;}
+        h1 {
+            padding: 60px 0px 10px 0;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input_grp {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin: 0 30px;
+        }
+
+        textarea {
+            resize: both;
+        }
+
+        #result{margin: 20px;}
+        .green{
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1>Checking Username By Regular Expression In Javascript</h1>
+    <h3>(Check wheather username consist of digits)</h3>
+    <section action="">
+        <div class="input_grp">
+            <label for="name">Username : </label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="input_grp">
+            <label for="text">Text : </label>
+            <textarea type="text" name="text" id="text"></textarea>
+        </div>
+        <input id="submit" type="submit" value="submit">
+        <div class="red green" id="result"></div>
+    </section>
+
+    <script>
+        var patt = /^[a-zA-Z\-]+$/;
+        document.getElementById('submit').addEventListener('click', function (e) {
+            var user = document.getElementById('name').value;
+            var result = user.match(patt);
+
+            if (!result) {
+                result = "Username should only contain a-z, A-Z or - sign";
+                document.getElementById('result').classList.add('red');
+            } else
+                {document.getElementById('result').classList.remove('red');
+            result = "Your USERNAME is FINE"}
+
+
+            document.getElementById('result').textContent = result;
+        });
+    </script>
+
+</body>
+
+</html>
